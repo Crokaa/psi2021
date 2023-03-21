@@ -1,0 +1,49 @@
+<html>
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+
+
+<body>
+
+    <div class="panel" >
+        <p class="sign" >Login</p>
+    <form class="form1" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+        <div>
+
+            <input id="nickname" class="un" type="text" placeholder="nickname" formControlName="nickname" autocomplete="on">
+        </div>
+
+        <div>
+
+            <input id="password" class="pass" type="password" placeholder="password" formControlName="password" autocomplete="off">
+        </div>
+
+        <div class="error" align="center" *ngIf="!validLogin">
+            Combinação de username e password inválida.
+        </div>
+
+        <div class="error" align="center" *ngIf="emptyLoginFields">
+            Preencha os campos de nickname e password
+        </div>
+
+        <button class="registo" type="submit">Login</button>
+
+    </form>
+
+    <div class="jatem" align="center"> Ainda não tem conta? <a class="login" routerLink="/registo"> Registe-se</a></div>
+
+</div>
+
+<div class="popup" id="loginWarning">
+
+    <p> Faça login para usar esta funcionalidade </p>
+    <button class="registo" id="confirmar" >Ok</button>
+    
+</div>
+
+</body>
+</html>

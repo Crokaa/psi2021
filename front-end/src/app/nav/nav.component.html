@@ -1,0 +1,9 @@
+<nav class="nav main-nav">
+    <ul>
+        <li><a routerLink="/profile">Perfil</a></li>
+        <li><a routerLink="/favoritas">Fotos favoritas</a></li>  
+        <li><a routerLink="/feed">Mural</a></li>
+        <li><a routerLink="/upload">Upload</a></li>
+		<li><a [routerLink]="['/login', {clear: true}]">Logout</a></li>
+    </ul>
+</nav>

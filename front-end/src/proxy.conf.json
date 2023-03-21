@@ -1,0 +1,10 @@
+{
+    "/bd/*": {
+        "target": "http://localhost:3073",
+        "secure": false,
+        "logLevel": "debug",
+        "pathRewrite": {
+            "^/bd": ""
+        }
+    }
+}

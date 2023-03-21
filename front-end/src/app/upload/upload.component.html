@@ -1,0 +1,87 @@
+<app-nav> </app-nav>
+
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/%22%3E">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+
+
+<div id="todo-poderoso">
+
+
+    <p class="recent">Faça Upload de uma Fotografia!</p>
+    <div id="photo">
+
+        <button type="button" id="labelP" (click)="testeAAA.click()" ><img src="assets/upload.png" ></button>
+
+        <img *ngIf="foto?.image" src={{foto.image}} width="300" height="300">
+
+        <div class="erro" *ngIf="!validFileExtension">
+            Tipo de ficheiro errado! Escolha um ficheiro de imagem <br>
+        </div>
+
+        <div class="erro" *ngIf="fotoExceededSize">
+            Tamanho máximo da foto foi excedido! <br>
+        </div>
+
+        <label for="picture">Escolha uma fotografia (max 100Kb) </label>
+        
+        <input type="file" #testeAAA id="picture" name="picture" accept="image/png, image/jpeg, image/jpg"
+            (change)="savePicture()"
+            >
+
+
+        <button type="button" id="par" (click)="testeAAA.click()" > Escolher outro ficheiro </button>
+
+    </div>
+
+    <form *ngIf="foto?.image" [formGroup]="detailsPhotoForm" (ngSubmit)="onSubmit()">
+
+        <div class="campo">
+            <label for="name">
+                Nome fotografia: <span style="font-size:small">({{detailsPhotoForm.value.name.length}} / 100)</span>
+            </label>
+            <textarea cols="70" id="name" type="text" formControlName="name"
+                autocomplete="off"></textarea>
+        </div>
+        
+            <p class="erro" *ngIf="largeName">
+            Nome com mais de 100 carateres!
+            </p>
+
+        <div class="campo">
+            <label for="descricao">
+                Descricao da foto:  <span style="font-size:small">({{detailsPhotoForm.value.descricao.length}} / 500)</span>
+            </label>
+            <textarea cols="70" rows="10" id="descricao" type="text" formControlName="descricao"
+                autocomplete="off"> </textarea>
+        </div>
+
+        <p class="erro" *ngIf="largeDescription">
+            Descrição com mais de 500 carateres!
+        </p>
+
+        <button *ngIf="foto.image" id="botaoPublicar" type="submit">Publicar fotografia</button>
+
+    </form>
+
+
+</div>
+
+
+<div class="popup botaoPublicar">
+
+    <p> Tem a certeza que quer fazer upload da fotografia sem descrição?
+    </p>
+    <button id="confirmar">Sim, não quero descrição</button>
+    <button id="cancelar">Não, eu quero escrever descrição</button>
+
+</div>
+
+<div *ngIf="erro" class="popup" id="erro">
+
+    <p>Erro a armazenar a foto</p>
+    <button id="erroOk" (click)="hidePop(1)">Ok</button>
+
+</div>

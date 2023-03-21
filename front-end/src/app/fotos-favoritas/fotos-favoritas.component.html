@@ -1,0 +1,32 @@
+<app-nav> </app-nav>
+
+<html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/%22%3E">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+
+<p class="recent">Fotos Favoritas</p>
+
+<h1 class="recent" *ngIf="!fotosFavoritas || fotosFavoritas.length === 0">
+    Não tem fotos favoritas
+</h1>
+
+<div>
+    <ul class="fotos">
+
+        <li *ngFor="let foto of fotosFavoritas">
+
+            <div class="photo-panel">
+                <figure>
+                    <a routerLink="/foto/{{foto._id}}">
+                        <img class="foto" src="{{foto.image}}" >
+                    </a>
+                </figure>
+            </div>
+        </li>
+    </ul>
+
+</div>

@@ -1,0 +1,124 @@
+/* You can add global styles to this file, and also import other style files */
+
+html{
+    background-color: rgb(208, 230, 231);
+}
+
+* {
+    font-family: 'Poppins', sans-serif;  
+} 
+
+@viewport {
+  width: device-width ;
+  zoom: 1.0 ;
+}
+
+
+.recent {
+    display: flex; 
+    justify-content:center; 
+    align-items:center;
+    color: #5b43c5;
+    font-weight: bold;
+    font-size: 30px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+.error {
+    color: red;
+}
+
+
+.popup {
+    position: fixed;
+    top: 40%;
+    left: 25%;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    width: 50%;
+    visibility: hidden;
+    background-color: rgb(129, 125, 131);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    align-items: center;
+    padding-bottom: 4%;
+  }
+
+  .popup p {
+    font-size: 120%;
+    color: #fff;
+  }
+
+  .popup button {
+
+    margin: 1% 1% 1% 1%;
+    background: linear-gradient(to right, #115cccb6, #8f7ce6);
+    width: 50%;
+  }
+
+  
+.popup button{
+    cursor: pointer;
+    border-radius: 5em;
+    color: #fff;
+    background: linear-gradient(to right, #2b48c9, #5b43c5);
+    /* background: linear-gradient(to right, #2b48c9, rgb(247, 247, 247)); */
+    border: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 100%;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+    text-align: center;
+    padding: 1% 1.5% 1% 1.5%;
+  }
+
+  .photo-panel{
+    background-color: white;
+    width: 370px;
+    height: 410px;
+    margin: 7em auto;
+    border-radius: 1.5em;
+    box-shadow: 1.5px 11px 35px 2px #5b43c552;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+figure {
+  width: 90%;
+}
+
+.foto{
+  margin-top: 20px;
+  width: 100%;
+  height: auto;
+}
+
+.fotos {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  justify-content:center; 
+  align-items:center;
+  margin-top: 0px;
+  padding-top:0px ;
+  align-self: center;
+}
+
+.fotos li {
+  list-style: none;
+  flex: 0 0 33.333333%;
+  justify-content:center; 
+  align-items:center;
+  display: flex; 
+}
+
+.foto:hover{
+  background-image: none;
+  cursor: pointer;
+  transform: scale(1.1);
+}

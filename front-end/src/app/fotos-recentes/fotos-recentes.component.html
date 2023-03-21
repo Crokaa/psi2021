@@ -1,0 +1,47 @@
+<app-nav> </app-nav>
+
+<html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/%22%3E">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+
+<p class="recent" *ngIf="recentes">Fotos mais recentes</p>
+<p class="recent" *ngIf="!recentes">Fotos com mais gostos</p>
+
+<div class="ordenacao">
+
+    <label for="tipo">
+        Visualizar por:
+    </label>
+
+    <select id="tipo" (change)="ordenarFotos($event)">
+        <option value="recentes">Mais recentes</option>
+        <option value="gostos">Mais gostos</option>
+    </select>
+
+</div>
+
+<h1 class="recent" *ngIf="!fotosRecentes || fotosRecentes.length === 0">
+    Não há fotos
+</h1>
+
+
+<div>
+    <ul class="fotos">
+
+        <li *ngFor="let foto of fotosRecentes">
+
+            <div class="photo-panel">
+                <figure>
+                    <a routerLink="/foto/{{foto._id}}">
+                        <img class="foto" src="{{foto.image}}">
+                    </a>
+                </figure>
+            </div>
+        </li>
+    </ul>
+
+</div>

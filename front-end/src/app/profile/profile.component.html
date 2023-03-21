@@ -1,0 +1,61 @@
+<app-nav class="main-navinho" > </app-nav>
+
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/%22%3E">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+
+<h1>
+    Olá {{user}} !
+</h1>
+
+<h1>
+    As suas fotos
+</h1>
+
+<h2 *ngIf ="upload">
+    Upload<span *ngIf="mupload">s</span> realizado<span *ngIf="mupload">s</span> com sucesso.
+</h2>
+<h2 *ngIf ="delete">
+   Foto apagada com sucesso.
+</h2>
+
+
+<h1 *ngIf="!fotos || fotos.length === 0" >
+	Ainda não fez upload de fotos
+</h1>
+
+<div>
+	<ul class="fotos">
+
+		<li *ngFor="let foto of fotos">
+
+			<figure>
+				<div class="photo-panel">	
+				<a routerLink="/foto/{{foto._id}}"> 
+					<img class="foto" src="{{foto.image}}" >  
+				</a>
+			   </div>
+				<!-- <div id="nrLikes">{{foto.listaLikes.length}} likes</div>
+
+				<label for="{{foto}}">{{foto.nome}}</label>
+
+				<figcaption> {{foto.descricao}} </figcaption> -->
+
+			</figure>
+
+			<!-- <button id="like" (onclick)="like(photo)">Gosto</button>
+			<button id="favoritos" (onclick)="favorita(photo)">Colocar nos favoritos</button> -->
+
+		</li>
+	</ul>
+
+</div>
+
+<div class="popup" id="successDelete">
+
+    <p> Foto eliminada com sucesso </p>
+    <button class="registo" id="confirmar" >Ok</button>
+    
+</div>

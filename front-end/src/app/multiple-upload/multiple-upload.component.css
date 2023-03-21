@@ -1,0 +1,263 @@
+body {
+    margin: 0% 0% 0% 0%;
+
+}
+
+
+#todo-poderoso {
+    display: flex;  
+    flex-direction: column;
+    justify-content:center; 
+    align-items:center;
+    /* z-index: -1; */
+    /* opacity: 0.2; */
+
+}
+
+#labelP {
+    /* text-align: center; */
+    margin-top: 5%;
+    background-color: transparent;
+    border: transparent;
+    border-style: none;
+}
+  
+
+#labelP img {
+    width: 50%;
+    cursor: pointer;
+
+
+}
+
+p {
+
+    text-align: center;
+    color: #5b43c5;
+    font-weight: bold;
+    font-size: 30px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    
+}
+
+
+#thumbnails {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    list-style-type: none;
+    width: 100%;
+}
+
+
+.botoes{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-evenly; 
+
+    
+}
+
+
+#thumbnails li {
+    /* align-self: center; */
+
+    max-height: 300px;
+    max-width: 300px;
+
+    padding: 5% 5% 5% 5%; 
+    text-align: center;
+    
+
+}
+
+#thumbnails li img {
+
+    height: auto;
+    max-height: 100%;
+    width: auto;
+    max-width: 100%;
+}
+
+
+#par,
+#botaoPublicar{
+    cursor: pointer;
+    border-radius: 5em;
+    color: #fff;
+    background: linear-gradient(to right, #2948cf, #6754bb, #8074b9);
+    border: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 150%;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+    text-align: center;
+    padding: 0.5% 1.5% 0.5% 1.5%;
+}
+
+
+.popup{
+
+    display: none;
+    visibility: visible;
+    /* position: fixed; */
+    top: 40%;
+    /* left: 25%; */
+    /* right: 25%; */
+    z-index: 10;
+    margin:0 auto;
+
+    /* display: flex; */
+    flex-wrap: wrap;
+    justify-content: space-around;
+   
+    width: 50%;
+
+    /* background-color: rgba(36, 160, 160, 0.932); */
+    background-color: rgba(129, 125, 131, 0.918);
+    
+    /* background-color: rgba(0, 0, 0, 0.932); */
+
+    text-align: center;
+    border-radius: 6px;
+    align-items: center;
+    padding-bottom: 4%;
+    /* transform: translate(50%,-30%) */
+}
+
+.popup p {
+    font-size: 150%;
+    color: #fff;
+    font-weight: normal;
+
+}
+
+.popup button,
+#descricaoIndividual button {
+    color: #fff;
+    cursor: pointer;
+    font-size: 120%;
+    margin: 2% 1% 1% 1%;
+    background: linear-gradient(to right, #115ccca1, #8f7ce6cc);
+    width: 70%;
+    padding: 0.5% 1.5% 0.5% 1.5%;
+    border-radius: 1em;
+}
+
+/* #teste {
+    visibility: hidden;
+} */
+
+#publicarTodas{
+    display: none;
+    /* visibility: hidden; */
+}
+
+
+#files {
+    display: none;
+}
+
+#par {
+    display: none;
+}
+
+
+#descricaoIndividual form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items:center;
+
+}
+
+#descricaoIndividual button{
+    margin-top: 2%;
+    width: 30%;
+    border: none;
+    
+}
+
+#descricaoIndividual h2{
+    display: flex;  
+    justify-content:center; 
+    align-items:center;
+    color: #5c73a3;
+    font-weight: bold;
+    font-size: 150%;
+
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+
+
+}
+
+#descricaoIndividual img{
+
+    height: auto;
+    max-height: 50%;
+    width: auto;
+    max-width: 50%;
+    padding-bottom: 2.5%;
+
+} 
+
+.erro{
+
+color: brown;
+
+} 
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    align-self:center;
+    align-items: center;
+    justify-content: center;
+    font-size: 120%;
+  }
+
+.campo label{
+    padding-bottom: 1%;
+}
+
+.campo textarea{
+    background-color: rgba(255, 255, 255, 0.767);
+    width: calc(100vw - 5%);
+    max-width: 100%;
+    outline: none;
+    resize: none;
+}
+
+
+.listaErros {
+    margin-top: 5%;
+    text-align: center;
+    font-weight: bold;
+}
+
+.listaErros p{
+    font-size: 130%;
+    color: black;
+    font-weight: none;
+
+}
+
+/* .listaErros p{
+    font-size: 110%;
+    margin-bottom: 2%;
+} */
+
+.listaErros ul{
+    list-style: square;
+
+}
+
+.listaErros li{
+    font-weight: normal;
+    font-size: 110%;
+    text-align: left;
+    margin-bottom: 0.5%;
+}

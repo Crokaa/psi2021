@@ -1,0 +1,66 @@
+<html>
+
+<head>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+
+
+
+<body>
+
+  <div class="panel" >
+    <p class="sign" >Registo</p>
+    <form class="form1" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+      <div>
+        <input class="un" id="nickname" type="text" placeholder="nickname" formControlName="nickname" autocomplete="on">
+      </div>
+
+      <div class="error" align="center" *ngIf="!nameLength">
+        O nickname precisa de 3 caracteres ou mais
+      </div>
+
+      <div class="error"  align="center" *ngIf="!nameValid">
+        O nickname só pode ter letras ou algarismos
+      </div>
+
+      <div>
+        <input class="pass" id="password" type="password" placeholder="password" formControlName="password"
+          autocomplete="off">
+      </div>
+
+      <div class="error" align ="center" *ngIf="!passwordLength">
+        A password precisa de 8 caracteres ou mais
+      </div>
+
+      <div class="error" align="center" *ngIf="!passwordUpperCase">
+        A password deve ter pelo menos uma letra maiúscula
+      </div>
+
+      <div class="error" align="center" *ngIf="!passwordLowerCase">
+        A password deve ter pelo menos uma letra minúscula
+      </div>
+
+      <div class="error" align="center" *ngIf="!passwordDigit">
+        A password deve ter pelo menos um algarismo
+      </div>
+
+      <div class="ifs">
+        Requisitos de password:
+        A password deve ter 8 ou mais carateres, incluindo pelo menos uma letra maiúscula, uma letra minúscula e um
+        algarismo
+      </div>
+
+      <button class="registo" type="submit">Registar</button>
+      <div class="error" align="center" *ngIf="nicknameExists">
+        Este nickname já existe.
+      </div>
+
+    </form>
+    <div class="jatem" align="center"> Já tem conta? <a class="login" routerLink="/login"> Faça login</a></div>
+  </div>
+</body>
+
+</html>

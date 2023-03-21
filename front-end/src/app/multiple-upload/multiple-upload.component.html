@@ -1,0 +1,149 @@
+<app-nav> </app-nav>
+
+
+
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com/%22%3E">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+
+<p class="recent">Faça Upload de várias Fotografias!</p>
+
+
+<div id="todo-poderoso">
+
+
+    <button type="button" id="labelP" (click)="selecionarPasta.click()" ><img src="assets/upload.png" ></button>
+
+    <!--
+    <img *ngIf="foto?.image" src={{foto.image}} width="300" height="300">
+
+    <div class="erro" *ngIf="!validFileExtension">
+        Tipo de ficheiro errado! Escolha um ficheiro de imagem <br>
+    </div>
+
+    <div class="erro" *ngIf="fotoExceededSize">
+        Tamanho máximo da foto foi excedido! <br>
+    </div>
+
+    <label for="picture">Escolha uma fotografia (max 100Kb) </label> -->
+
+
+    <label for="files">Escolha fotografias com no máximo 100Kb cada. </label>
+
+    <input type="file" id= "files" #selecionarPasta webkitdirectory multiple  accept="image/png, image/jpeg, image/jpg"
+    (change)="savePictures($event)" />
+
+
+    <ul *ngIf="fotos"  id="thumbnails">
+        <li *ngFor="let f of fotos.slice(0, 10)">
+            <img src={{f.image}}>
+        </li>
+    </ul>
+
+    <div class="botoes">
+    <button type="button" id="par" (click)="selecionarPasta.click()" > Escolher outra pasta </button>
+
+    <button *ngIf="fotos && fotos.length > 0" id="botaoPublicar" (click)="confirmarPublicacao()">Publicar fotografias</button>
+
+    </div>
+
+    <div class="listaErros">
+        <p *ngIf="numFicheirosNotImages > 0">
+            <span style="color:rgb(216, 121, 104);"> {{numFicheirosNotImages}} </span> ficheiro(s) em {{numTotalFicheiros}} não eram imagens na pasta escolhida.
+        </p>
+
+        <div *ngIf="ficheirosMaisMax && ficheirosMaisMax.length > 0">
+            <p>O(s) ficheiro(s) seguintes excederam o tamanho máximo:</p>
+            <ul>
+                <li *ngFor="let f of ficheirosMaisMax">
+                    {{f}}
+                </li>
+            </ul>
+        </div>
+
+        <div *ngIf="erros && erros.length > 0">
+            <p>Aconteceu um erro ao fazer upload da(s) imagens(s) seguinte(s):</p>
+            <ul>
+                <li *ngFor="let f of erros">
+                    {{f}}
+                </li>
+            </ul>
+        </div>
+
+
+    </div>
+
+
+
+
+</div>
+
+<div class="popup">
+
+    <p> Tem a certeza que quer fazer upload das fotografias sem descrição?
+    </p>
+    <button id="confirmar">Sim, não quero descrição</button>
+    <button id="escreverDescricao">Não, eu quero escrever descrição</button>
+
+</div>
+
+
+
+<div id="descricaoIndividual">
+
+
+    <form *ngIf="fotoAtual"  [formGroup]="detailsPhotoForm" (ngSubmit)="escreverDescricoes()">
+        <h2>
+            Nome da fotografia: {{fotoAtual.nome}}
+        </h2>
+    
+        <img src={{fotoAtual.image}}>
+
+        <div class="campo">
+            <label for="descricao">
+                Descrição da foto: ({{detailsPhotoForm.value.descricao? 
+                    detailsPhotoForm.value.descricao.length:0}} / 500)
+            </label>
+            <textarea cols="70" rows="10" id="descricao" type="text" formControlName="descricao"
+                autocomplete="off" (change) = "teste()"
+                placeholder="Se não quiser acrescentar descrição, passe para a fotografia seguinte"> 
+             </textarea>
+        </div>
+
+        <p class="erro" *ngIf="largeDescription">
+            Descrição com mais de 500 carateres!
+        </p>
+
+        <button id="proximaFoto" type="submit">Proxima Fotografia</button>
+
+        <button id="publicarTodas" type="submit">Publicar fotografias</button>
+        
+
+    </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+<!--
+<div class="popup">
+
+    <p>Erro a armazenar a foto</p>
+    <button id="erroOk" onsubmit="cancelarUpload()">Ok</button>
+
+</div>
+
+<div class="popup">
+
+    <p>Foto armazenada com sucesso</p>
+    <button id="sucessoOk" onsubmit="cancelarUpload()">Ok</button>
+
+</div> -->

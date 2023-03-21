@@ -1,0 +1,124 @@
+ * {
+    font-family: 'Poppins', sans-serif;
+} 
+
+@viewport {
+    width: device-width ;
+    zoom: 1.0 ;
+  }
+  
+.panel {
+    background-color: #f2ebf6;
+    /* width: 500px; */
+    max-width: 500px;
+    /* height: 350px; */
+    margin: 7em auto;
+    border-radius: 1.5em;
+    box-shadow: 1.5px 11px 35px 2px rgba(0, 0, 0, 0.411);
+    height: auto;
+    padding-bottom: 3%;
+}
+
+form.form1 {
+    padding-top: 15px;
+}
+
+.sign {
+    padding-top: 25px;
+    color: #2b48c9;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 23px;
+    /* margin: 0 0 5px 216px; */
+    margin: auto;
+    text-align: center;
+}
+
+
+.un {
+    width: 75%;
+    color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgba(136, 126, 126, 0.04);
+    padding: 10px 0px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+
+    display: block;
+    margin: auto;
+    margin-bottom: 2%;
+}
+
+.pass {
+    width: 75%;
+    color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgba(136, 126, 126, 0.04);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    /* margin-bottom: 10px;
+    margin-left: 65px; */
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+
+    display: block;
+    margin: auto;
+    margin-bottom: 2%;
+}
+
+
+.un:focus, .pass:focus {
+    /* border: 2px solid rgba(0, 0, 0, 0.18) !important; */
+    box-shadow: 0 0 5px 2px #0c345c;
+}
+
+.ifs{
+    margin-top: 0px;
+    padding-left: 10px;
+    margin: 10px;
+    font-size: 15px;
+}
+
+.registo {
+    cursor: pointer;
+    border-radius: 5em;
+    color: #fff;
+    background: linear-gradient(to right, #2b48c9, #5b43c5);
+    border: 0;
+    margin: auto; 
+    display: block;
+    padding: 10px 40px 10px 40px;
+    font-family: 'Poppins', sans-serif;
+/*     font-size: 12px;
+ */    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+}
+
+.login {
+    margin-top: 25px;
+    color: #5b43c5;
+    text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+    /* color: #E1BEE7; */
+    text-decoration: none
+}
+
+
+.jatem{
+   margin-top: 10px; 
+}
+
+.error {
+    color: red;
+}

@@ -1,0 +1,85 @@
+<app-nav> </app-nav>
+
+<head>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+
+<div *ngIf="!foto">
+
+  <h1 class="recent">
+    A Foto não existe
+  </h1>
+
+</div>
+
+<div id="divFora" *ngIf="foto">
+
+  <figure>
+
+    <div class="photo-panel">
+      <!-- width="80" height="80"  -->
+
+      <div id="botoesSuperiores">
+        <!-- (click)="opcoes()"  
+(mouseout)="close()"-->
+        <button id="opcoes" (click)="opcoes()"><img src="assets/dot.png"></button>
+        <!-- <button  id="share"  class="share" (click)="getLink()"><img src="assets/share.png"  ></button> -->
+
+      </div>
+
+      <div id="opcao">
+        <ul>
+          <li class="op">
+            <button (click)="getLink()">
+              <p>Partilhar</p>
+              <img src="assets/share.png">
+          </button>
+          </li>
+          <li class="op">
+            <button *ngIf="owner"  (click)="popUpDelete()">
+              <p> Apagar</p>
+              <img src="assets/del.png">
+          </button>
+          </li>
+        </ul>
+      </div>
+
+      <div class="popUp">
+        Tem a certeza que quer apagar?
+        <button id="yes" (click)="deletePhoto()">Sim</button>
+        <button id="no" (click)="close()">Não</button>
+      </div>
+
+      <div class="linkPopUp">
+        <p>Link copiado</p>
+        <button id="ok" (click)="hideLinkPopUp()">OK</button>
+      </div>
+
+      <img class="foto" src="{{foto.image}}">
+
+      <div class="text">
+        <label for="{{foto}}">{{foto.nome}}</label>
+        <figcaption> {{foto.descricao}} </figcaption>
+      </div>
+
+      <div id="botoesInferiores">
+        <!--   width="75" height="75" - like
+              width="80" height="80" 
+            -->
+        <button *ngIf="!like" id="like" class="like" (click)="likeFoto()"><img src="assets/like.png">
+          {{foto.listaLikes?.length}}</button>
+        <button *ngIf="like" id="like" class="like" (click)="likeFoto()"><img
+            src="assets/likefull.png">{{foto.listaLikes?.length}}</button>
+        <button *ngIf="!favorite" id="favoritos" class="fav" (click)="favoritaFoto()"><img
+            src="assets/fav.png"></button>
+        <button *ngIf="favorite" id="favoritos" class="fav" (click)="favoritaFoto()"><img src="assets/favfull.png"></button>
+      </div>
+    </div>
+
+
+  </figure>
+
+
+</div>
